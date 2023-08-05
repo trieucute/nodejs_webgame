@@ -1,0 +1,344 @@
+<head>
+    <link rel="stylesheet" href="/css/chitiet.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB GAME</title>
+    <link rel="stylesheet" href="/font/fontawesome/fontawesome-free-6.1.1-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Righteous&display=swap"
+        rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;;900&display=swap" rel="stylesheet"> -->
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+</head>
+
+<%- include('partials/header'); -%>
+
+    <main>
+        <div class="main-section elementor-section ">
+
+            <div class="" id="details_pro">
+           
+                
+                
+                  
+          
+            </div>
+         
+            <div class="tab-product-reviews">
+                <div class="title-reviews">
+                    <h2>Có thể bạn sẽ thích…</h2>
+                    <div class="content-product" style="margin-top: 30px;">
+                        <div class="content-wrapper-outer" id="content-wrapper-outers_special0">
+                           
+                               
+                                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <section class="footer-newsletter elementor-color ">
+            <div class="footer-mail  theme-container">
+                <aside class="text-footer-mail">
+                    <i class="fa-regular fa-envelope"></i>
+                    <h2> Sign Up Newslatter</h2>
+                    <form action="" method="post">
+                        <div class="form-fields">
+                            <input type="email" name="" id="" placeholder="Your email address">
+                            <input type="submit" name="" id="" value="Sign up">
+                        </div>
+                    </form>
+                </aside>
+                <aside class="icon-footer-mail">
+                    <div class="follow-icon">
+                        <ul>
+                            <li><a href="" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="" class="icon"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="" class="icon"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="" class="icon"><i class="fa fa-rss"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+
+        </section>
+
+    </main>
+    <script src="/javascripts/card_img.js"></script>
+<script src="/javascripts/fixed.js"></script>
+
+    <%- include('partials/footer'); -%>
+<script>
+   
+      fetch("http://localhost:3000/product/<%=id%>")  
+ .then(function(res) {
+     if(!res.ok) {throw new Error("Lỗi = " + res.status); }
+     return res.json();
+ })
+ .then(function(item) {
+    
+    //  let specialpro= document.getElementById('content-wrapper-outers_special');
+     let detail_product=document.getElementById('details_pro');
+    //  data.forEach(item => {
+        
+            // console.log(start);
+            // if(item.cate_id===id){
+
+            
+                detail_product.innerHTML+=`  <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb" style="float:left">
+                          <li class="breadcrumb-item"><a href="/">Home</a></li>
+                          <li class="breadcrumb-item"><a href="/shop/">Shop</a></li>
+                          <li class="breadcrumb-item"><a href="/shop/cate/${item.id_cate}">${item.name_cate}</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">${item.name_pro}</li>
+                        </ol>
+                      </nav>
+                        <div class="chitietsp" >
+                        <div class="container_imgs">
+
+
+                        <div class="mySlides_pro" style="display: block;">
+
+                          <img src="/images/${item.image_name1}" style="width:100%">
+                        </div>
+
+                        <div class="mySlides_pro">
+
+                          <img src="/images/${item.image_name2}" style="width:100%">
+                        </div>
+
+                        <div class="mySlides_pro">
+
+                          <img src="/images/${item.image_name3}" style="width:100%">
+                        </div>
+
+                        <div class="mySlides_pro">
+
+                          <img src="/images/${item.image_name4}" style="width:100%">
+                        </div>
+                        <div class="mySlides_pro">
+
+                        <img src="/images/${item.image_name5}" style="width:100%">
+                      </div>
+                        <div class="mySlides_pro">
+
+                          <video controls style="width:100%">
+                            <source src="/images/${item.image_name8}">
+                            </video>
+                        </div>
+                        <div class="mySlides_pro">
+
+                          <video controls style="width:100%">
+                            <source src="/images/${item.image_name9}">
+                            </video>
+                        </div>
+
+
+                        <a class="prev_icon" onclick="plusSlides(-1)">❮</a>
+                        <a class="next_icon" onclick="plusSlides(1)">❯</a>
+
+                        <!-- <div class="caption-container">
+                          <p id="caption"></p>
+                        </div> -->
+
+                        <div class="row" style="margin-top: 20px;">
+                          <div class="column">
+                            <img class="demo cursor" src="/images/${item.image_name1}" style="width:100%" onclick="currentSlide(1)" >
+                          </div>
+                          <div class="column">
+                            <img class="demo cursor" src="/images/${item.image_name2}" style="width:100%" onclick="currentSlide(2)" >
+                          </div>
+                          <div class="column">
+                            <img class="demo cursor" src="/images/${item.image_name3}" style="width:100%" onclick="currentSlide(3)" >
+                          </div>
+                          <div class="column">
+                            <img class="demo cursor" src="/images/${item.image_name4}" style="width:100%" onclick="currentSlide(4)">
+                          </div>
+                          <div class="column">
+                          <img class="demo cursor" src="/images/${item.image_name5}" style="width:100%" onclick="currentSlide(5)" >
+                        </div>    
+                          <div class="column">
+
+                            <img class="demo cursor" src="/images/${item.image_name6}" style="width:100%" onclick="currentSlide(6)" alt="gameplay1">
+
+                          </div>    
+                          <div class="column">
+                          <img class="demo cursor" src="/images/${item.image_name7}" style="width:100%" onclick="currentSlide(7)" alt="gameplay2">
+
+                          </div>
+                        </div>
+                      </div>
+
+                    <div class="list-sp">
+                        <h1 class="name" style="display: inline;">${item.name_pro} </h1>     <div style="border-radius: 50%; background-color: #F3B900;padding: 8px ;display: inline;background-size: 50px;margin: 0 10px;font-size: 16px;font-family: Righteous;"><span >s${Math.round(100-(item.discount/ item.price_pro ) *100).toFixed(0)}%</span></div>
+                        <div class="star-rating-block">
+                            <div class="star-rating">
+                                ${start(item.special)}
+
+                            </div>
+                        </div>
+                  
+                        <div class="price">
+                        <del><span>$</span>${item.price_pro}</del>
+
+                            <span style="padding-left:10px   ;color: #F3B900;">$${item.discount}</span>
+                        </div>
+
+                        <div class="details__short">
+                            <ul class="circle">
+                                <li>- Chất lượng 100%</li>
+                                <li> - Độ phân giải 10/10</li>
+                                <li> - Miễn phí VAT trên $59</li>
+                            </ul>
+                        </div>
+                        <div class="sl">
+                            <input class="quantity-btn minus" value="-" type="button">
+                            <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty"
+                                class="input-text qty text" size="4" pattern="[0-9]*" placeholder=""
+                                inputmode="numeric">
+                            <input class="quantity-btn plus" value="+" type="button">
+                        </div>
+                        <div class="btn-sp">
+                            <button class="btn-one" type="button"><span>ADD TO CART</span> </button>
+                        </div>
+                        <div class="list_love">
+                            <i class="fa-regular fa-heart"
+                                style="padding: 3px;background-color: rgba(255,255,255,0.5); "></i>
+                            <span>Add To Wishlist</span>
+                        </div>
+
+                    </div>
+                    </div>
+                    <div class="tabs">
+                                <div class="description">
+                                    <h2>Mô tả</h2>
+                                    <div class="text-des" id="text_des">
+                                        
+                                        <div class="text-main-des" >
+                                            ${item.description}
+                                    </div>
+                                        
+                                       
+                                        <div class="img-des">
+                                            <img src="/images/${item.image_des}" alt="">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+`
+    //    }
+         
+    //  });
+     
+     console.log(item);
+ })
+ .catch(function(error)  { console.log("Lỗi: ", error);})
+ function start(item){
+        var start='';
+            if(item==1){
+                
+                start=`<i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                <i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                <i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                <i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                <i class="fa-solid fa-star" style="color:#F3B402;"></i>`;
+            }else{
+                start=`<i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                <i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                <i class="fa-solid fa-star" style="color:#F3B402;"></i>`
+            }
+            return start;
+    }
+
+    //tăng view +1
+const url = `http://localhost:3000/product/<%=id%>`;
+
+fetch(url)
+  .then(response => response.json())
+  .then(response => {
+    // response.views là giá trị views hiện tại của sản phẩm
+    const new_views_count = response.views + 1; // Tăng views lên 1
+    // Gọi hàm để gửi giá trị views mới lên server để cập nhật
+    updateProductViews('<%=id%>', new_views_count);
+  })
+  .catch(error => console.log(error));
+    function updateProductViews(product_id, views) {
+  const url = `http://localhost:3000/product/${product_id}`;
+
+  fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ views: views })
+  })
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(error => console.log(error));
+}
+</script>
+<script>
+     window.fetch("http://localhost:3000/product/top5")  
+ .then(function(res) {
+     if(!res.ok) {throw new Error("Lỗi = " + res.status); }
+    //  console.log(res.json());
+     return res.json().then(data=>{
+        let products=document.getElementById('content-wrapper-outers_special0');
+         // Sắp xếp danh sách sản phẩm theo viewCount giảm dần
+       
+     data.forEach(item => {
+        if(item.id_pro!==Number('<%=id%>' )){
+
+        
+           
+            products.innerHTML+=`<div class="content-row-product"  >
+                                <input type="hidden" value="${item.id_pro}" id="idpro">
+                                <a href="/shop/product/${item.id_pro}" class="img-product"  id="proid">
+                                    <img src="/images/${ item.urlHinh }" alt="">
+                                </a>
+                                <span class="onsale">${Math.round(100-(item.discount/ item.price_pro ) *100).toFixed(0)}%</span>
+                                <div class="star-rating-block">
+                                    <div class="star-rating">
+                                       ${start(item.special)}
+                                                
+                                              
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                                <h3 class="product-name">
+                                    <a href="/shop/product/${item.id_pro}"  id="proid">${item.name_pro }</a>
+                                </h3>
+                                <div class="poduct-price">
+                                <del><span>$</span>${item.price_pro}</del>
+                        
+                                <ins><span>$</span>${item.discount}</ins>
+                                </div>
+                                </div>`
+    //    }
+}
+     });
+     
+     console.log(data);
+     })
+ })
+//  .then(function(data) {
+    
+//     //  let specialpro= document.getElementById('content-wrapper-outers_special');
+     
+//  })
+ .catch(function(error)  { console.log("Lỗi: ", error);})
+
+
+</script>

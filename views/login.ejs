@@ -1,0 +1,215 @@
+<head>
+    <link rel="stylesheet" href="/font/fontawesome/fontawesome-free-6.1.1-web/css/all.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <style>
+        .menu-left {
+    /* width: 20%; */
+    height: 42px;
+}
+    </style>
+</head>
+<%- include('partials/header'); -%>
+<main>
+<div class="login-form main-section elementor-section  ">
+
+    <div class="container" id="container" style="margin-top: 20px;">
+        <div class="form-container sign-up-container">
+          <form action="" name="frmdk">
+            <h1>Tạo tài khoản</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <!-- <span>or use your email for registration</span> -->
+            <input type="text" id="username" name="username" placeholder="Tên đăng nhập" />
+            <input type="text" id="fullname" name="fullname" placeholder="Họ và tên" />
+            
+            <input type="number"  id="phoneNumber" name="phone"  placeholder="Số điện thoại" />
+            <input type="email"   id="email"  placeholder="Email" name="email"/>
+            <input type="password"  id="password"  placeholder="Mật khẩu" name="password" />
+            <input type="password"  id="re-password"   placeholder="Xác nhận mật khẩu" name="re_password" />
+            <input type="" hidden id="role" name="role" value="0">
+            <div id="error-mess" style="color:red"></div>
+            <button type="button" id="signUp_submit" onclick="dangky()">Đăng ký</button>
+        </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <!-- <div class="form-container sign-in-container"> -->
+            <form name="frmdn">
+                <h1>Đăng nhập</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>hoặc tài khoản mới</span>
+                <input type="text" placeholder="Tên đăng nhập" id="username_in" name="username"/>
+                <input type="password" placeholder="Mật khẩu" id="password_in" name="password"/>
+               <span style="color: black;width: fit-content; font-size: 16px;"> <input type="checkbox"  id="remember"placeholder="remember" style="width: 20px ; height: 15px; padding: 3px 10px;"> Nhớ đăng nhập </span> 
+               <div id="error-mess_in" style="color:red"></div>
+                <a href="/login/forgot">Quên mật khẩu?</a>
+
+                <button type="button" id="signIn_submit" onclick="dangnhap()">Đăng nhập</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Chào mừng trở lại!</h1>
+                    <p>Để giữ kết nối với chúng tôi, vui lòng đăng nhập bằng thông tin cá nhân của bạn</p>
+                    <button class="ghost" id="signIn">Đăng nhập</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, bạn!</h1>
+                    <p>Nhập thông tin cá nhân của bạn và bắt đầu hành trình với chúng tôi</p>
+                    <button class="ghost" id="signUp" >Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('partials/footer'); -%>
+</main>
+<script src="/javascripts/login.js"></script>
+<script>
+        var errors= document.getElementById('error-mess_in');
+ 
+    function dangnhap(){
+        let username = document.frmdn.username.value;
+      
+        let passwords = document.frmdn.password.value; 
+        if(!username && !passwords){
+          errors.innerText ='Không được bỏ trống ';
+          return
+        } 
+fetch(`http://localhost:3000/users/dn/${username}`, {
+  method: 'POST',
+  body: JSON.stringify({ password: passwords }),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => {
+  if (response.ok) {
+    response.json().then(userInfo => {
+        sessionStorage.setItem('user', JSON.stringify(userInfo));
+      console.log('Đăng nhập thành công:', userInfo.username);
+      console.log(userInfo.username, userInfo.fullname);
+      // Lấy URL trang trước đó từ HTTP Referer
+        const prevPageUrl = document.referrer;
+
+        // Chuyển trang đến trang trước đó
+        window.location.href = prevPageUrl;
+        if (prevPageUrl) {
+        window.location.href = prevPageUrl;
+        } else {
+        // Nếu không có trang trước đó, chuyển đến trang chủ
+        window.location.href = 'http://localhost:3000/';
+}
+    //   window.location.href='http://localhost:3000/';
+      // in ra "john Smith"
+    });
+  } else {
+    response.json().then(error => {
+      console.log(error.message);
+      errors.innerText =error.message;
+      // in ra "Tên đăng nhập hoặc mật khẩu không đúng"
+    });
+  }
+})
+.catch(error => {
+  console.log(error);
+});
+    }
+
+
+    function validate(full, un, pw, pw2, em, p) {
+     // Kiểm tra các trường thông tin không được bỏ trống
+  if (!full || !un || !pw || !pw2 || !em  || !p) {
+    return 'Vui lòng điền đầy đủ thông tin';
+  }
+  // Biểu thức chính quy kiểm tra fullname không có số
+  let fullnameRegex = /^[^0-9]+$/;
+  if (!fullnameRegex.test(full)) {
+    return 'Họ tên không được chứa số';
+  }
+
+
+
+  // Biểu thức chính quy kiểm tra số điện thoại từ 10 đến 11 số
+  let phoneRegex = /^[0-9]{10,11}$/;
+  if (!phoneRegex.test(p)) {
+    return 'Số điện thoại không hợp lệ';
+  }
+
+  // Biểu thức chính quy kiểm tra định dạng email
+  let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailRegex.test(em)) {
+    return 'Email không hợp lệ';
+  }
+
+ 
+  // Biểu thức chính quy kiểm tra mật khẩu ít nhất 6 chữ số
+  let passwordRegex = /^.{6,}$/;
+  if (!passwordRegex.test(pw)) {
+    return 'Mật khẩu phải có ít nhất 6 ký tự';
+  }
+
+  if (pw !== pw2) {
+    return 'Sai xác nhận mật khẩu';
+  }
+
+  // Nếu không có lỗi nào, trả về null
+  return null;
+}
+       
+   
+function dangky(){
+    let un = document.frmdk.username.value;
+   let pw = document.frmdk.password.value;
+   let pw2 = document.frmdk.re_password.value;
+   let em = document.frmdk.email.value;
+   let full = document.frmdk.fullname.value;
+   let ro= document.frmdk.role.value;
+   let p= document.frmdk.phone.value;
+   let tb = document.getElementById('error-mess');
+      
+
+
+    let validationError = validate(full, un, pw, pw2, em, p);
+  if (validationError) {
+    tb.innerText = validationError;
+    return;
+  }
+
+        const data = {
+        fullname:full,
+        username: un,
+        password: pw, 
+        email:em,
+        role:ro,
+        phone:p
+    }
+    const url ="http://localhost:3000/users/";
+    fetch(url, {
+        method: "POST",
+
+        body: JSON.stringify(data),
+
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+
+    })
+    .then(response => response.json()) 
+    .then (function(data){
+        document.frmdk.reset();
+        console.log(data);
+        tb.innerText = 'Đăng ký thành công';
+    })
+    .catch(err => console.log(err));
+    
+
+}
+
+    </script>

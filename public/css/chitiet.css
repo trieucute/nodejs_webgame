@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lato:wght@400;900&family=Righteous&family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap');
+
+a {
+    text-decoration: none;
+}
+
+.chitietsp {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-evenly;;
+    margin-top: 20px;
+    width: 100%;
+    padding-bottom: 20px;
+
+}
+
+/* .img-sp {
+    width: 50%;
+} */
+
+.list-sp {
+    width: 45%;
+    padding-left: 20px;
+}
+
+/* .img-sp .img-first-pro img {
+    min-height: 500px;
+    width: 100%;
+}
+.slides-img-pro{
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.img-pro-item img{
+    height: 100px;
+    float: left;
+    
+}
+.img-pro-item{
+    width: 150px;
+} */
+.list-sp .name {
+    color: white;
+    font-family: Righteous;
+    font-size: 25px;
+}
+
+.price {
+    font-size: 23px;
+    font-family: lato;
+    color: white;
+    
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-weight: 700;
+
+}
+
+#size-sp {
+    padding: 5px 50px 5px 10px;
+    width: 50%;
+    outline: none;
+
+}
+
+.size {
+    color: rgb(68, 67, 67);
+    font-family: Mergeblack;
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+#size-sp {
+    margin-left: 35px;
+}
+
+#size-sp option {
+    color: rgb(68, 67, 67);
+    font-family: Mergeblack;
+}
+
+.sl {
+    color: rgb(68, 67, 67);
+    width: fit-content;
+    font-size: 22px;
+    padding: 20px 10px;
+    float: left;
+
+}
+
+.sl a {
+    padding: 0 20px;
+}
+
+.btn-sp {
+    width: 50%;
+    padding: 20px 10px;
+    padding-bottom: 20px;
+}
+
+.list_love {
+    clear: both;
+    color: #f2f2f2;
+    padding-left:10px ;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.list_love span {
+ 
+    font-size: 18px;
+}
+.btn-one {
+    /* display: block; */
+    background: -webkit-linear-gradient(90deg, rgb(243, 180, 2) 0%, rgb(251, 230, 0) 100%);
+    display: inline-block;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    border: 0;
+    line-height: 22px;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    letter-spacing: 0.6px;
+    position: relative;
+    transition: all .35s;
+}
+
+.btn-one span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-one:after {
+    position: absolute;
+    content: "";
+    border: none;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: all 0.2 linear;
+    color: white;
+    outline: none;
+    background-color: transparent;
+    background-image: linear-gradient(0deg, #030303 10%, #131313 100%);
+
+    transition: all .35s;
+}
+
+.btn-one:hover {
+    color: #fff;
+}
+
+.btn-one:hover:after {
+    width: 100%;
+    border: none;
+
+}
+
+
+.font h2 {
+
+    font-family: Mergeblack;
+
+}
+
+.add-sp {
+    margin: 50px 0;
+}
+
+.add-sp h3 {
+    font-family: Mergeblack;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+.mota {
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 17px;
+
+}
+
+.details__short {
+    border-top: 1px solid rgba(235, 235, 235, 0.2);
+    border-bottom: 1px solid rgba(235, 235, 235, 0.2);
+    padding: 20px 10px;
+    font-size: 19px;
+    color: whitesmoke;
+
+}
+
+.details__short>ul li {
+    padding: 10px 0;
+}
+
+.minus,
+.plus {
+    display: inline-block;
+    width: 38px;
+    cursor: pointer;
+    vertical-align: top;
+    font-size: 20px !important;
+    padding: 0 !important;
+    background-color: transparent;
+    line-height: 38px;
+    border: 0;
+}
+
+input[type="button"] {
+    background: -webkit-linear-gradient(90deg, rgb(243, 180, 2) 0%, rgb(251, 230, 0) 100%);
+}
+
+input.qty {
+    border: none;
+    display: inline;
+    vertical-align: top;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 0 3px;
+    font-size: 14px;
+    line-height: 38px;
+    width: 38px;
+}
+.heart-icon {
+    background-color: rgba(255,255,255,0.5);
+    /* height: 35px;
+    width: 35px;
+    padding: 20px 10px ; */
+}
+.tabs{
+    margin-top: 30px;
+}
+.description h2{
+    position: relative;
+    /* width: fit-content; */
+    color: #F3B900;
+    padding: 10px 0;
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+    /* font-family: Righteous; */
+    letter-spacing:2px;
+    border-bottom: 1px solid rgba(235, 235, 235, 0.2);
+}
+.description h2::after{
+    position: absolute;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: -100%;
+    background: #F3B900;
+    right: 0;
+    width: 300px;
+    margin: auto;
+}
+.text-des{
+    margin: 10px 0;
+    font-size: 18px;
+    color: white;
+}
+
+.tab-product-reviews{
+    margin-top: 60px;
+}
+.title-reviews h2{
+    position: relative;
+    /* width: fit-content; */
+    color: white;
+    padding: 10px 0;
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+    /* font-weight: 600; */
+    letter-spacing:2px;
+    border-bottom: 1px solid rgba(235, 235, 235, 0.2);
+}
+.title-reviews h2::after{
+    position: absolute;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: -100%;
+    background: #F3B900;
+    right: 0;
+    width: 400px;
+    margin: auto;
+}
+
+
+
+     
+ /* Position the image container (needed to position the left and right arrows) */
+ .container_imgs {
+    position: relative;
+    width: 60%;
+  }
+  
+  /* Hide the images by default */
+  
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev_icon,
+  .next_icon {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next_icon {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev_icon:hover,
+  .next_icon:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+ 
+  .column {
+    float: left;
+    width: 13.6%;
+    margin-left:  5px;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active_img,
+  .demo:hover {
+    opacity: 1;
+  }
+  .mySlides_pro img{
+      height: 450px;
+  }
+  .mySlides_pro{
+      display: none
+  }
+  img {
+    vertical-align: middle;
+  }
+  .breadcrumb{
+
+  }
+  .breadcrumb-item{
+    float: left;
+    margin-left: 30px;
+    /* font-family: lato; */
+    font-size: 18px;
+    color: white;
+  }
+  .breadcrumb-item::after{
+    content: '';
+ 
+    margin-left: 30px;
+    border-left: 3px solid gray;
+  }
+  .breadcrumb-item:last-child::after{
+    content: '';
+  
+    border: none;
+  }
+  .breadcrumb-item:first-child{
+    margin-left: 0px;
+
+  }
+  .breadcrumb-item.active{
+    color: #F3B900;
+  }
+
+
+
+  .text-main-des{
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+
+    font-weight: 700;
+    padding:10px 10px 10px 10px ;
+   line-height: 2rem;
+   text-align: justify;
+    /* letter-spacing: 1px; */
+  }
+
+  .img-des{
+
+    width: 60%;
+    margin-top: 20px ;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .img-des img{
+    width: 100%;
+    height: 300px;
+  }
+  .text-des-bot{
+    padding-top: 10px;
+    font-size: 17px;
+  }
+
+  

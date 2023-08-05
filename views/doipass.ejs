@@ -1,0 +1,231 @@
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB GAME</title>
+    <link rel="stylesheet" href="/font/fontawesome/fontawesome-free-6.1.1-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Righteous&display=swap"
+        rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;;900&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/css/chitiet.css">
+    <link rel="stylesheet" href="/css/index.css">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+    
+    /* body{
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    
+        color: #fff;
+        font-family: Arial;
+        font-size: 12px;
+    } */
+    
+    .grad{
+        /* position: absolute; */
+        /* padding-top: 10px; */
+        display: flex;
+        align-items: center;
+        /* align-content: center; */
+        justify-content: center;
+    }
+    
+    .header-doipass{
+        /* position: absolute; */
+        padding-right: 70px;
+    }
+    
+    .header-doipass div{
+        float: left;
+        color: #fff;
+        font-family: Righteous;
+        font-size: 45px;
+        font-weight: 200;
+    }
+    
+    .header-doipass div span{
+        color: #e8d13b !important;
+    }
+    
+    .doimk{
+        /* position: absolute; */
+        top: calc(50% - 75px);
+        left: calc(50% - 50px);
+        /* height: 150px; */
+        width: 550px;
+        padding: 10px;
+        z-index: 2;
+    }
+    
+    .doimk input[type=text]{
+        width: 250px;
+        height: 30px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.6);
+        border-radius: 2px;
+        color: #fff;
+        font-family: 'Exo', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 4px;
+    }
+    
+    .doimk input[type=password]{
+        width: 450px;
+        height: 55px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.6);
+        border-radius: 2px;
+        color: #fff;
+        font-family: 'Exo', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 4px;
+        margin-top: 10px;
+    }
+    
+    .doimk button[type=button]{
+        width: 260px;
+        /* height: 35px; */
+        background: #fff;
+        border: 1px solid #fff;
+        cursor: pointer;
+        border-radius: 2px;
+        color: #a18d6c;
+        font-family: 'Exo', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 6px;
+        margin-top: 10px;
+    }
+    
+    .doimk button[type=button]:hover{
+        opacity: 0.8;
+    }
+    
+    .doimk button[type=button]:active{
+        opacity: 0.6;
+    }
+    
+    .doimk input[type=text]:focus{
+        outline: none;
+        border: 1px solid rgba(255,255,255,0.9);
+    }
+    
+    .doimk input[type=password]:focus{
+        outline: none;
+        border: 1px solid rgba(255,255,255,0.9);
+    }
+    
+    .doimk button[type=button]:focus{
+        outline: none;
+    }
+    
+    ::-webkit-input-placeholder{
+       color: rgba(255,255,255,0.6);
+    }
+    
+    ::-moz-input-placeholder{
+       color: rgba(255,255,255,0.6);
+    }
+    .doimk h4{
+        font-family: 'Exo', sans-serif;
+        font-size: 25px;
+        /* padding: 20px 0; */
+        padding-top:10px ;
+        padding-bottom:20px ;
+        color: #fff;
+    }
+    </style>
+</head>
+
+<%- include('partials/header'); -%>
+<main>
+    <section class=" main-section elementor-section  ">
+<!-- <div class="body"></div> -->
+		<div class="grad">
+		<div class="header-doipass">
+			<div>GAME<span>Y</span></div>
+		</div>
+		<br>
+		<form class="doimk" name="frmdp">
+            <h4>ĐỔI MẬT KHẨU</h4>
+				<input type="password" placeholder="Mật khẩu cũ" name="password"><br>
+				<input type="password" placeholder="Mật khẩu mới" name="password2"><br>
+				<input type="password" placeholder="Xác nhận" name="password3"><br>
+                <div class="error-mess" id="error-mess" style="color: red; padding-top: 10px;"></div>
+                <button type="button" value="Đổi" class="btn-doi" onclick="doipass()">Đổi</button>
+				<!-- <input type="button" value="Đổi"> -->
+        </form>
+    </div>
+</section>
+</main>
+
+    <%- include('partials/footer'); -%>
+    <script>
+        function doipass(){
+            // let un = user.username;
+    
+   let pw = document.frmdp.password.value;
+   let pw2 = document.frmdp.password2.value;
+   let pw3 = document.frmdp.password3.value;
+   
+   let tb = document.getElementById('error-mess');
+      
+    if(pw==='' &&pw2==='' &&pw3==='' ){
+        tb.innerText = "Vui lòng nhập đầy đủ ";
+        return;
+    }
+    if(pw==='' || pw2==='' || pw3==='' ){
+        tb.innerText = "Vui lòng nhập đầy đủ ";
+        return;
+    }
+
+
+   
+        const data = {
+        password: pw2, 
+    }
+    const url ='http://localhost:3000/users/<%=username%>';
+    fetch(url, {
+        method: "PATCH",
+
+        body: JSON.stringify(data),
+
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+
+    })
+    .then(async (response) => {
+    if (response.ok) {
+      const data = await response.json();
+      if ('<%=password%>' === pw) {
+        if (pw2 === pw3) {
+          tb.innerText = "Đổi mật khẩu thành công";
+          alert('Đổi mật khẩu thành công, Mời bạn đăng nhập lại')
+          window.location.href='http://localhost:3000/login/signup';
+        } else {
+          tb.innerText = "Sai xác nhận mật khẩu";
+        }
+      } else {
+        tb.innerText = "Sai mật khẩu hiện tại";
+      }
+    } else {
+      throw new Error("Lỗi kết nối");
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+ 
+       
+}
+
+    </script>

@@ -1,0 +1,127 @@
+#sanpham{
+    display: flex;
+    font-family: Mergeblack;
+    flex-wrap: wrap;
+flex-direction: row;
+margin-bottom: 50px;
+
+}
+.row-sp{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex-row-sp{
+    width: 25%;
+    display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+flex-direction: row;
+justify-content: center;
+
+}
+.row-sp img{
+    width: 100%;
+    height: 380px;
+}
+.head-shop{
+    text-align: center;
+    padding: 10px 0;
+font-family: Mergeblack;
+
+}
+.row-sp h4 a{
+    color: rgb(68, 67, 67);
+}
+.gia{
+    color: black
+}
+/* .btn .btn_order{
+padding: 7px 15px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+color: white;
+font-family: Mergeblack;
+background-color: rgb(181, 7, 7);
+}
+.btn .btn_order:hover{
+background-color: #3D8DAE;
+} */
+.btn{
+    display: flex;
+    justify-content: center;
+}
+.btn .btn-order{
+    padding: 7px 15px;
+    margin: 5px;
+      border-radius: 5px;
+      border: none;
+      color: white;
+      font-family: Mergeblack;
+      background-color: rgb(181, 7, 7);
+    display: block;
+    
+  font-family: Mergeblack;
+  
+    text-decoration: none;
+  
+    
+
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  .btn-order span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .btn-order:after{
+    position: absolute;
+    content: "";
+    border: none;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #3D8DAE;
+  
+    transition: all .35s;
+  }
+  
+  .btn-order:hover{
+    color: #fff;
+  }
+  
+  .btn-order:hover:after{
+    width: 100%;
+    border: none;
+  
+  }
+.them{
+text-align: center;
+font-family: Mergeblack;
+margin:40px 0;
+
+}
+.them a h3{
+border: 1px solid white;
+display: inline;
+font-size: 15px;
+padding: 5px 60px;
+border-radius: 5px;
+background-color: gainsboro;
+}
+.hot-sale{
+
+  font-size: 23px;
+  text-align: center;
+  color: rgb(202, 18, 18);
+  font-family: Mergeblack;
+
+}

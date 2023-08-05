@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB GAME</title>
+    <link rel="stylesheet" href="/font/fontawesome/fontawesome-free-6.1.1-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Righteous&display=swap"
+        rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;;900&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/css/index.css">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+    <div class="all">
+        <!-- header-->
+        <%- include('partials/header'); %>
+
+        <main>
+            <div class="main-section elementor-section ">
+                <div class="main-content">
+                    <div class="elementor-background-overlay"></div>
+                    <div class="main-elementor-container">
+                        <div class="catetory-content">
+                            <div class="title-outer">
+                                <span><i class="fa-solid fa-list"></i>Danh mục</span>
+                            </div>
+                            <ul class="product-categories sidebar-category-inner" id="categories">
+                        
+
+                                <!-- ===============END Get Categories======= -->
+
+                            </ul>
+                        </div>
+                        <div class="slide-show">
+                            <div class="slide-content active">
+                                <img src="/images/main-banner-01.jpg" alt="">
+                                <div class="slide-text">
+                                    <div class="text-top"><span>Save up to 20% and more</span></div>
+                                    <div class="text-mid">
+                                        <h2>Famous Ultimate <br>Game Sale</h2>
+                                    </div>
+                                    <div class="elementor-button-wrapper" style="padding: 30px 0 ;">
+                                        <a href="" class="elementor-button-link">
+                                            <span>read more</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-content ">
+
+                                <img src="/images/banner2.webp" alt="">
+                                <div class="slide-text">
+                                    <div class="text-top"><span>Save up to 20% and more</span></div>
+                                    <div class="text-mid">
+                                        <h2>Play Game <br> With Lastest Version</h2>
+                                    </div>
+                                    <div class="elementor-button-wrapper" style="padding: 30px 0 ;">
+                                        <a href="" class="elementor-button-link">
+                                            <span>read more</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-content ">
+
+                                <img src="/images/banner3.jpg" alt="" style="width:100%">
+                                <div class="slide-text">
+                                    <div class="text-top"><span style="color:black">Save up to 20% and more</span></div>
+                                    <div class="text-mid" style="color:black">
+                                        <h2>Play Game With <br>Lastest Version</h2>
+                                    </div>
+                                    <div class="elementor-button-wrapper" style="padding: 30px 0 ;">
+                                        <a href="" class="elementor-button-link">
+                                            <span>read more</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="prew" onclick="showSlides()"><i
+                                    class="fa-solid fa-circle-chevron-right"></i></span>
+                            <span class="next" onclick="showSlides()"><i
+                                    class="fa-solid fa-circle-chevron-left"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="contents theme-container ">
+                <div class="content-row elementor-section">
+                    <div class="elementor-heading-title ">
+                        <h2>Sản phẩm đặc biệt</h2>
+                    </div>
+                    <div class="content-product">
+                        <div class="content-wrapper-outer" id="content-wrapper-outers_special">
+                          
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="elementor-section-items-middle elementor-section theme-container">
+                <div class="elementor-column-gap-no">
+                    <div class="elementor-column">
+                        <div class="elementor-text">
+                            <div class="icon-dis"><img src="/images/percent-discount.svg" alt=""></div>
+                            <div class="text-title">
+                                <h2>Thêm $100 và ưu đãi gói miễn phí trọn đời cố định trong thời gian giới hạn</h2>
+                            </div>
+                            <div class="elementor-button-wrapper">
+                                <a href="" class="elementor-button-link">
+                                    <span>Shop now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="elementor-blog-content elementor-section theme-container">
+                <div class="content-bog">
+                    <div class="discount-box">
+                        <div class="text">
+                            <h2>Giảm giá 20%
+                                </h2>
+                            <p>
+                            <h2>Cho các game</h2>
+                            </p>
+                        </div>
+                        <div class="elementor-button-wrapper">
+                            <a href="" class="elementor-button-link">
+                                <span>Shop now</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="game-app-box">
+                        <div class="text">
+                            <h4>Ứng dụng game</h4>
+                            <p>
+                            <h2>Cố định 50%</h2>
+                            </p>
+                        </div>
+                        <div class="elementor-button-wrapper">
+                            <a href="" class="elementor-button-link">
+                                <span>Shop now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="new-products theme-container elementor-section">
+                <div class="container-new-product-populated">
+
+                    <div class="elementor-element-populated elementor-color">
+                        <div class="text-top-populated">
+                            <span>Thiết bị <br>
+                                Dành cho Chuyên gia <br>
+                                chơi game</span>
+
+                        </div>
+                        <div class="text-mid-populated">
+                            Bán các vật phẩm dota của bạn để lấy tiền thật mà bạn xứng đáng nhất.
+                        </div>
+                        <div class="elementor-button-wrapper">
+                            <a href="" class="elementor-button-link">
+                                <span>Shop now</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="content-row elementor-section " style="margin: 0 0;">
+                        <div class="elementor-heading-title ">
+                            <h2>Sản phẩm mới nhất</h2>
+                            <div class="owl-buttons">
+                                <div class="owl-prev"><i class="fa-sharp fa-solid fa-arrow-left"></i></div>
+                                <div class="owl-next"><i class="fa-sharp fa-solid fa-arrow-right"></i></div>
+
+                            </div>
+                        </div>
+
+                        <div class="content-product ">
+                          
+                            <div class="content-wrapper-outers" id="content-wrapper-outer_new" >
+                                
+                               
+                                   
+                                        
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+            <section class="elementor-sections theme-container ">
+                <div class="elementor-color about-row">
+                    <div class="container-about-elementor">
+                        <div class="img-about-elementor">
+                            <img src="/images/bg5.jpg" alt="">
+                        </div>
+                        <div class="content-row-about">
+                            <div class="elementor-widget-text-editor">
+                                <h2>Về công ty chúng tôi</h2>
+                            </div>
+                            <div class="elementor-widget-text-editor">
+                                <p>Praesent a ornare metus. Etiam luctus arcu a neque Praesent aornar <br>venenatis,
+                                    quis hendrerit mi maximus.</p>
+                            </div>
+                            <div class="elementor-widget-text-editor">
+                                <ul>
+                                    <li>Duis scelerisque nunc ac massa efficitur pulvinar.</li>
+                                    <li>Vivamus eget nisi scelerisque, molestie risus.</li>
+                                    <li>Aliquam nec sapien vitae dui dapibus blandit.</li>
+                                    <li>Sed non ipsum ut mauris dictum ullamcorper ac at nibh.</li>
+                                </ul>
+                            </div>
+                            <div class="elementor-button-wrapper">
+                                <a href="" class="elementor-button-link">
+                                    <span>Shop now</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="elementor-section theme-container">
+                <div class="">
+                    <div class="swiper-slide swiper-slide-active">
+                        <a href="">
+                            <figure>
+                                <img class="swiper-slide-image" src="/images/brand-06.png" alt="">
+                            </figure>
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide ">
+                        <a href="">
+                            <figure>
+                                <img class="swiper-slide-image" src="/images/brand-06.png" alt="">
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="swiper-slide ">
+                        <a href="">
+                            <figure>
+                                <img class="swiper-slide-image" src="/images/brand-06.png" alt="">
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="swiper-slide ">
+                        <a href="">
+                            <figure>
+                                <img class="swiper-slide-image" src="/images/brand-06.png" alt="">
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="swiper-slide ">
+                        <a href="">
+                            <figure>
+                                <img class="swiper-slide-image" src="/images/brand-06.png" alt="">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="elementor-blog theme-container elementor-section">
+                <div class="content-blog-container">
+                    <div class="elementor-heading-title ">
+                        <h2>Form the blog</h2>
+                    </div>
+                    <div class="flex-blog-content">
+                        <div class="col-content">
+                            <div class="post-container-content">
+                                <div class="img-content-post">
+                                    <img src="/images/blog1.jpg" alt="">
+
+                                    <div class="block_hover">
+                                        <div class="links">
+                                            <a href=""><i class="fa fa-plus"></i></a>
+                                            <a href=""><i class="fa fa-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-content-outer">
+                                    <div class="post-text">
+                                        <div class="entry-date">
+                                            <span>August 23,2021</span>
+                                        </div>
+                                        <div class="post-titie">
+                                            <a href="">Risus Retium Tortor Metus Fringilla Nullam</a>
+                                        </div>
+                                        <div class=" read-more elementor-button-wrapper">
+                                            <a href="" class="elementor-button-link">
+                                                <span>READ MORE</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-container-content">
+                                <div class="img-content-post">
+                                    <img src="/images/blog2.jpg" alt="">
+
+                                    <div class="block_hover">
+                                        <div class="links">
+                                            <a href=""><i class="fa fa-plus"></i></a>
+                                            <a href=""><i class="fa fa-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-content-outer">
+                                    <div class="post-text">
+                                        <div class="entry-date">
+                                            <span>August 23,2021</span>
+                                        </div>
+                                        <div class="post-titie">
+                                            <a href="">Risus Retium Tortor Metus Fringilla Nullam</a>
+                                        </div>
+                                        <div class=" read-more elementor-button-wrapper">
+                                            <a href="" class="elementor-button-link">
+                                                <span>READ MORE</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="footer-newsletter elementor-color ">
+                <div class="footer-mail  theme-container">
+                    <aside class="text-footer-mail">
+                        <i class="fa-regular fa-envelope"></i>
+                        <h2> Sign Up Newslatter</h2>
+                        <form action="" method="post">
+                            <div class="form-fields">
+                                <input type="email" name="" id="" placeholder="Your email address">
+                                <input type="submit" name="" id="" value="Sign up">
+                            </div>
+                        </form>
+                    </aside>
+                    <aside class="icon-footer-mail">
+                        <div class="follow-icon">
+                            <ul>
+                                <li><a href="" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="" class="icon"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="" class="icon"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="" class="icon"><i class="fa fa-rss"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+
+            </section> 
+
+        </main>
+        <%- include('partials/footer'); %>
+
+       
+    </div>
+</body>
+<script src="/javascripts/fixed.js"></script>
+<script src="/javascripts/slideshow.js"></script>
+<script>
+fetch("http://localhost:3000/category/")  
+ .then(function(res) {
+     if(!res.ok) {throw new Error("Lỗi = " + res.status); }
+     return res.json();
+ })
+ .then(function(data) {
+     let menuslide= document.getElementById('categories');
+
+     data.forEach(item => {
+         menuslide.innerHTML +=`  <li class="cat-item"><a  href="/shop/cate/${item.id_cate}">${item.name_cate}</a></li>
+         `;
+       
+     });
+     
+     console.log(data);
+ })
+ .catch(function(error)  { console.log("Lỗi: ", error);})
+
+                                
+</script>
+<script>
+    window.fetch("http://localhost:3000/product/special")  
+ .then(function(res) {
+     if(!res.ok) {throw new Error("Lỗi = " + res.status); }
+     return res.json();
+ })
+ .then(function(data) {
+    
+     let specialpro= document.getElementById('content-wrapper-outers_special');
+     let newpro=document.getElementById('content-wrapper-outer_new');
+     data.forEach(item => {
+        
+        
+
+            specialpro.innerHTML+=`<div class="content-row-product"  >
+                                <input type="hidden" value="${item.id_pro}" id="idpro">
+                                <a href="/shop/product/${item.id_pro}" class="img-product"  id="proid">
+                                    <img src="/images/${ item.urlHinh }" alt="">
+                                </a>
+                                <span class="onsale">${Math.round(100-(item.discount/ item.price_pro ) *100).toFixed(0)}%</span>
+                                <div class="star-rating-block">
+                                    <div class="star-rating">
+                                        <i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                <i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                <i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                
+                                              
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                                <h3 class="product-name">
+                                    <a href="/shop/product/${item.id_pro}"  id="proid">${item.name_pro }</a>
+                                </h3>
+                                <div class="poduct-price">
+                                <del><span>$</span>${item.price_pro}</del>
+                        
+                                <ins><span>$</span>${item.discount}</ins>
+                                </div>
+                                </div>`
+        
+
+         
+     });
+     
+     console.log(data);
+ })
+ .catch(function(error)  { console.log("Lỗi: ", error);})
+ 
+ window.fetch("http://localhost:3000/product/")  
+ .then(function(res) {
+     if(!res.ok) {throw new Error("Lỗi = " + res.status); }
+     return res.json();
+ })
+ .then(function(data) {
+    
+     let newpro=document.getElementById('content-wrapper-outer_new');
+     data.forEach(item => {
+        
+        
+
+         
+            newpro.innerHTML+=`<div   class="content-row-product content-row-new-product" id="content-row-product" >
+                                <input type="hidden" value="${item.id_pro}" id="idpro">
+                                <a href="/shop/product/${item.id_pro}" class="img-product"  id="proid">
+                                    <img src="/images/${ item.urlHinh }" alt="">
+                                </a>
+                                <span class="onsale">${Math.round(100-(item.discount/ item.price_pro ) *100).toFixed(0)}%</span>
+                                <div class="star-rating-block">
+                                    <div class="star-rating">
+                                        <i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                <i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                <i class="fa-solid fa-star" style="color:#F3B402;"></i>
+                                                
+                                              
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                                <h3 class="product-name">
+                                    <a href="/shop/product/${item.id_pro}"  id="proid">${item.name_pro }</a>
+                                </h3>
+                                <div class="poduct-price">
+                                <del><span>$</span>${item.price_pro}</del>
+                        
+                                <ins><span>$</span>${item.discount}</ins>
+                                </div>
+                                </div>`
+
+        
+         
+     });
+     
+     console.log(data);
+ })
+ .catch(function(error)  { console.log("Lỗi: ", error);})
+ 
+                                
+</script>
+</html>
